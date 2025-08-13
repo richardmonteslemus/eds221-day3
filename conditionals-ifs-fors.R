@@ -63,3 +63,69 @@ switch(species,
 # see next week dplyr:: does something similar
 
 
+# Writing for loops 
+dog_names <- c("Teddy", "Khora", "Banjo", "Waffle")
+
+# create example for one data element to put into my for loop
+# version with copy and pasting 
+print(paste("My dog's name is", dog_names[1]))
+print(paste("My dog's name is", dog_names[2]))
+print(paste("My dog's name is", dog_names[3]))
+print(paste("My dog's name is", dog_names[4]))
+
+# variable I can update
+# pupster <- 1
+
+for (pupster in dog_names) {
+  print(paste("My dog's name is", pupster))
+}
+
+# Another for loop example 
+mass <- seq(from = 0, to = 3, by = 0.5)
+
+i <- mass[1]
+new_val <- i + 2 # adding 2 to each value 
+print(new_val)
+
+# write into a for loop 
+
+for (i in mass) {
+  new_val <- i + 2 # adding 2 to each value 
+  print(new_val)
+}
+
+# practice some example with indexing 
+i <- 1
+new_val <- mass[i] + 2
+print(new_val)
+
+for (i in 1:length(mass)) { # defining iterator using lenght of vector 
+  new_val <- mass[i] + 2
+  print(new_val)
+}
+
+for (i in seq_along(mass)) { # defining iterator using sequence along
+  new_val <- mass[i] + 2
+  print(new_val)
+}
+
+# another example with iterating by position (indexing)
+tree_height <- c(1, 2, 6, 10)
+
+#example for the first case
+tree_height[1] + tree_height[2]
+
+# convert into a generalizable expression 
+i <- 1
+val <- tree_height[i] + tree_height[i + 1]
+print(val)
+
+# convert into a for loop 
+# test out creating the sequence 
+
+seq_along(tree_height)
+
+for (i in seq_along(tree_height)) {
+  val <- tree_height[i] + tree_height[i + 1]
+  print(val)
+}
